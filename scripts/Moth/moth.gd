@@ -51,6 +51,11 @@ func nearest_lamp():
 	return closest
 
 func die():
+	set_physics_process(false)
+	$Sprite2D.hide()
+	$moth_died.play()
+	$death_particle.emitting = true
+	await $moth_died.finished
 	queue_free()
 
 func _on_lamp_detect_body_entered(body: Node2D) -> void:

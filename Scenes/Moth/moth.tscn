@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyrfb2v7boesp"]
+[gd_scene load_steps=7 format=3 uid="uid://cyrfb2v7boesp"]
 
 [ext_resource type="Script" uid="uid://iydky0s4qeb1" path="res://scripts/Moth/moth.gd" id="1_5usn8"]
 [ext_resource type="Texture2D" uid="uid://dhdaki1oosykv" path="res://assets/moth.png" id="1_eidbc"]
 [ext_resource type="AudioStream" uid="uid://du3hampr5uw4r" path="res://assets/moth_follow.wav" id="3_2ackq"]
+[ext_resource type="AudioStream" uid="uid://bd0u65x2hdwts" path="res://assets/moth_tempted.wav" id="4_86y7x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eidbc"]
 radius = 19.416489
@@ -33,6 +34,9 @@ shape = SubResource("CircleShape2D_5usn8")
 
 [node name="moth_follow" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_2ackq")
+
+[node name="moth_tempted" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_86y7x")
 
 [node name="follow_particle" type="CPUParticles2D" parent="."]
 emitting = false

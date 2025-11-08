@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 			temptation_lamp = nearest_lamp()
 			target_pos = nearest_lamp().position
 			$tempted_particle.emitting = true
+			$moth_tempted.play()
 		
 		else:
 			target_pos = get_tree().get_first_node_in_group("Player").position

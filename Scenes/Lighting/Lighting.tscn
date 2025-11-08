@@ -222,15 +222,8 @@ _data = {
 &"flicker": SubResource("Animation_wmd5v")
 }
 
-[node name="Lamp" type="CharacterBody2D"]
+[node name="Lamp" type="CharacterBody2D" groups=["Lamp"]]
 script = ExtResource("1_uuj3v")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -475.0
-offset_top = -397.0
-offset_right = 630.0
-offset_bottom = 513.0
-color = Color(0.27387273, 0.27387273, 0.27387273, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

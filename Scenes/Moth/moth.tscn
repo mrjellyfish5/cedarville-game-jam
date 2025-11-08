@@ -7,10 +7,11 @@
 radius = 19.416489
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5usn8"]
-radius = 20.024984
+radius = 25.179358
 
 [node name="Moth" type="CharacterBody2D"]
-collision_mask = 0
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_5usn8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,11 +21,12 @@ texture = ExtResource("1_eidbc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_eidbc")
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-
 [node name="lampDetect" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lampDetect"]
 shape = SubResource("CircleShape2D_5usn8")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [connection signal="body_entered" from="lampDetect" to="." method="_on_lamp_detect_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

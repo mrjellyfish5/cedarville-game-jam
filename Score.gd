@@ -1,3 +1,3 @@
 extends Node
 
-var moths_lost = 0
+var moths = 0

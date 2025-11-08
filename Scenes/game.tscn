@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://w8vipaibn4k0"]
+[gd_scene load_steps=9 format=4 uid="uid://cx03ldnxo5fud"]
 
 [ext_resource type="Texture2D" uid="uid://bd22ntvwywacv" path="res://assets/wood.jpg" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dke3qtjvucvep" path="res://Scenes/Player/player.tscn" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://g0873wwrpsrg" path="res://Scenes/Lighting/Lighting.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://cyrfb2v7boesp" path="res://Scenes/Moth/moth.tscn" id="4_3dryh"]
+[ext_resource type="AudioStream" uid="uid://1412cu3qyfu4" path="res://assets/sb_beautifuloblivion.mp3" id="5_wowpa"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ebmjs"]
 
@@ -85,3 +86,7 @@ color = Color(0.35759547, 0.35759547, 0.35759547, 1)
 
 [node name="Lamp4" parent="." instance=ExtResource("3_wrm1d")]
 position = Vector2(536, -724)
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wowpa")
+autoplay = true

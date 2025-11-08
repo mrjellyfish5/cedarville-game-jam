@@ -46,5 +46,17 @@ scale_amount_min = 8.46
 scale_amount_max = 8.46
 color = Color(0.1393883, 0.73028004, 3.85046e-07, 1)
 
+[node name="tempted_particle" type="CPUParticles2D" parent="."]
+emitting = false
+one_shot = true
+explosiveness = 0.74
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.88
+initial_velocity_max = 70.73
+scale_amount_min = 8.46
+scale_amount_max = 8.46
+color = Color(0, 0.6526506, 0.91088927, 1)
+
 [connection signal="body_entered" from="lampDetect" to="." method="_on_lamp_detect_body_entered"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

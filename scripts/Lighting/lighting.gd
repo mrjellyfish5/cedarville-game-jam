@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
 @export var health = 1
+var dead = false
 
 func lamp_fall(direction):
 	health -= 1
 	if health <= 0:
+		dead = true
 		$crash.play()
 		$CollisionShape2D.queue_free()
 		$anim.play("fall_" + direction)

@@ -27,6 +27,7 @@ func _physics_process(delta):
 	
 	if !(velocity.y >= MAX_FALL):
 		velocity.y += GRAVITY
+
 	
 	if Input.is_action_just_pressed("Jump") and jumps_remaining > 0:
 		$anim.play("idle")
@@ -36,8 +37,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("attack"):
 		attack()
 	
-	if is_on_floor():
+	elif is_on_floor():
 		jumps_remaining = MAX_JUMPS
+		$anim.play("idle")
+	elif velocity.y > 0:
+		$anim.stop()
 	
 	move_and_slide()
 

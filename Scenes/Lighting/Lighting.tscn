@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://g0873wwrpsrg"]
+[gd_scene load_steps=15 format=3 uid="uid://g0873wwrpsrg"]
 
 [ext_resource type="Texture2D" uid="uid://dr05vgihdj8ex" path="res://assets/peakpx.jpg" id="1_n7ydd"]
 [ext_resource type="Script" uid="uid://c4o7mlv18436m" path="res://scripts/Lighting/lighting.gd" id="1_uuj3v"]
 [ext_resource type="Texture2D" uid="uid://dsi1heji2cit7" path="res://assets/torch_anim.png" id="2_uuj3v"]
+[ext_resource type="AudioStream" uid="uid://ep1yb5x1x8s5" path="res://assets/750894__newlocknew__elecbuzz_the-electric-hum-of-a-street-lamp-by-the-roadside-1_em.wav" id="4_feswn"]
+[ext_resource type="AudioStream" uid="uid://df15ny1f4lfis" path="res://assets/148075__sandyrb__lightbulb-smash-001.wav" id="5_wmd5v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7ydd"]
 size = Vector2(43, 88)
@@ -73,6 +75,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("buzz:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_jtag4"]
 resource_name = "fall_right"
@@ -123,6 +137,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("buzz:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1000)]
 }
 
 [sub_resource type="Animation" id="Animation_7nhbq"]
@@ -175,6 +201,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("buzz:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1000)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_feswn"]
 _data = {
@@ -223,6 +261,7 @@ _data = {
 }
 
 [node name="Lamp" type="CharacterBody2D" groups=["Lamp"]]
+collision_mask = 3
 script = ExtResource("1_uuj3v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -251,3 +290,11 @@ autoplay = "lightpulse"
 libraries = {
 &"": SubResource("AnimationLibrary_u1q3b")
 }
+
+[node name="buzz" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_feswn")
+autoplay = true
+max_distance = 1000.0
+
+[node name="crash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_wmd5v")

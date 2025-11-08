@@ -11,6 +11,7 @@ var index = 0
 
 func _ready() -> void:
 	$RichTextLabel.text = sayings[index]
+	index += 1
 	$anim.play("scroll out")
 
 func _process(delta: float) -> void:
@@ -25,5 +26,7 @@ func _process(delta: float) -> void:
 				$anim.play("LAMPLIGHT")
 				index += 1
 		else:
+			$anim.play("fade out")
+			await $anim.animation_finished
 			get_tree().change_scene_to_file("res://Scenes/game.tscn")
 	

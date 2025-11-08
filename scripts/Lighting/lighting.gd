@@ -11,6 +11,7 @@ func lamp_fall(direction):
 		$CollisionShape2D.queue_free()
 		$anim.play("fall_" + direction)
 		await $anim.animation_finished
+		Score.lamps += 1
 		queue_free()
 	else:
 		$hit.play()

@@ -16,3 +16,7 @@ func lamp_fall(direction):
 		$hit.play()
 		health -= 1
 		$anim.play("swing")
+
+
+func _on_buzz_finished() -> void:
+	$buzz.play()

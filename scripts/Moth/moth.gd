@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			target_pos = get_tree().get_first_node_in_group("Player").position
 
+
 	if follow_method != "None":
 		velocity = (target_pos - global_position).normalized()
 		velocity *= (speed_player if (follow_method == "Player") else speed_normal) * delta

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bjw8a233ws5ya" path="res://scripts/main_menu.gd" id="1_jix8l"]
 [ext_resource type="LabelSettings" uid="uid://uukq5geroigx" path="res://game_name.tres" id="2_glbon"]
-[ext_resource type="Theme" uid="uid://beofj1nsuo73g" path="res://create_lobby_button.tres" id="3_nlkkf"]
-[ext_resource type="Theme" uid="uid://cwj7ndqmq4hy7" path="res://quit_theme.tres" id="4_qe12f"]
+[ext_resource type="Theme" uid="uid://beofj1nsuo73g" path="res://assets/create_lobby_button.tres" id="3_nlkkf"]
+[ext_resource type="Theme" uid="uid://cwj7ndqmq4hy7" path="res://assets/quit_theme.tres" id="4_qe12f"]
 
 [node name="Main Menu" type="CanvasLayer"]
 script = ExtResource("1_jix8l")

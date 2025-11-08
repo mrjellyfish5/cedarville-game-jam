@@ -6,7 +6,7 @@ var sayings = ["Long ago, before men ever entered earth, moths ruled the land.",
 "Who developed their [b]TRUE[/b] weapon: [shake][b]THE LAMP[/b][/shake].",
 "Drawn by its lurid luminosity, moths sought the lamps, unaware of the intense electrical flow brought on by Edison's reckless experiments.",
 "Their only hope was to send a fly, resistant to the lamps' lure, able to extinguish mankind's defence once and for all.",
-"You have one goal: [shake]BREAK THE LAMPS[/shake]"]
+"You have one goal: [i]BREAK THE LAMPS.[/i]"]
 var index = 0
 
 func _ready() -> void:

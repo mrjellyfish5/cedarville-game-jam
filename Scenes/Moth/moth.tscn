@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyrfb2v7boesp"]
+[gd_scene load_steps=5 format=3 uid="uid://cyrfb2v7boesp"]
 
 [ext_resource type="Script" uid="uid://iydky0s4qeb1" path="res://scripts/Moth/moth.gd" id="1_5usn8"]
 [ext_resource type="Texture2D" uid="uid://dhdaki1oosykv" path="res://assets/moth.png" id="1_eidbc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eidbc"]
 radius = 19.416489
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5usn8"]
+radius = 20.024984
 
 [node name="Moth" type="CharacterBody2D"]
 collision_mask = 0
@@ -18,3 +21,10 @@ texture = ExtResource("1_eidbc")
 shape = SubResource("CircleShape2D_eidbc")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[node name="lampDetect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lampDetect"]
+shape = SubResource("CircleShape2D_5usn8")
+
+[connection signal="body_entered" from="lampDetect" to="." method="_on_lamp_detect_body_entered"]

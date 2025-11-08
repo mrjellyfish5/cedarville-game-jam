@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://g0873wwrpsrg"]
 
-[ext_resource type="Texture2D" uid="uid://dr05vgihdj8ex" path="res://assets/peakpx.jpg" id="1_n7ydd"]
 [ext_resource type="Script" uid="uid://c4o7mlv18436m" path="res://scripts/Lighting/lighting.gd" id="1_uuj3v"]
 [ext_resource type="Texture2D" uid="uid://dsi1heji2cit7" path="res://assets/torch_anim.png" id="2_uuj3v"]
+[ext_resource type="Texture2D" uid="uid://diumy7i2c4i4y" path="res://assets/light.png" id="3_wmd5v"]
 [ext_resource type="AudioStream" uid="uid://ep1yb5x1x8s5" path="res://assets/750894__newlocknew__elecbuzz_the-electric-hum-of-a-street-lamp-by-the-roadside-1_em.wav" id="4_feswn"]
 [ext_resource type="AudioStream" uid="uid://df15ny1f4lfis" path="res://assets/148075__sandyrb__lightbulb-smash-001.wav" id="5_wmd5v"]
 
@@ -278,7 +278,7 @@ shape = SubResource("RectangleShape2D_n7ydd")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.83840925, 0.7280687, 0.457775, 1)
 shadow_enabled = true
-texture = ExtResource("1_n7ydd")
+texture = ExtResource("3_wmd5v")
 
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {
@@ -293,6 +293,7 @@ libraries = {
 
 [node name="buzz" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_feswn")
+volume_db = 10.0
 autoplay = true
 max_distance = 1000.0
 

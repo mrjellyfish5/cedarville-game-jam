@@ -27,4 +27,6 @@ position = Vector2(273.99997, 252.99998)
 position = Vector2(959, 565)
 
 [node name="Moth" parent="." instance=ExtResource("3_qc4db")]
-position = Vector2(99, 63)
+position = Vector2(890, 389)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]

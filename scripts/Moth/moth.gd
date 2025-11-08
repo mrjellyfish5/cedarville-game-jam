@@ -9,6 +9,8 @@ func _physics_process(delta: float) -> void:
 
 	if follow_method == "Lamp" or follow_method == "Tempted":
 		target_pos = nearest_lamp()
+
+	
 		
 	elif follow_method == "Player":
 		

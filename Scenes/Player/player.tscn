@@ -170,7 +170,7 @@ radius = 10.31
 height = 43.85
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xpcdj"]
-radius = 25.73908
+radius = 57.554314
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.4, 0.4)
@@ -202,7 +202,7 @@ collision_mask = 4
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackZone"]
-position = Vector2(92.5, 0)
+position = Vector2(87.5, 2.842171e-14)
 shape = SubResource("CircleShape2D_xpcdj")
 
 [node name="Camera2D" type="Camera2D" parent="."]

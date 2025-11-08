@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://g0873wwrpsrg"]
+[gd_scene load_steps=20 format=3 uid="uid://g0873wwrpsrg"]
 
 [ext_resource type="Script" uid="uid://c4o7mlv18436m" path="res://scripts/Lighting/lighting.gd" id="1_uuj3v"]
 [ext_resource type="Texture2D" uid="uid://bhbdo8tli4jpa" path="res://assets/Lamps/zapper1.png" id="2_jtag4"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://ep1yb5x1x8s5" path="res://assets/750894__newlocknew__elecbuzz_the-electric-hum-of-a-street-lamp-by-the-roadside-1_em.wav" id="4_feswn"]
 [ext_resource type="Texture2D" uid="uid://y7hgkequwlvy" path="res://assets/Lamps/zapper3.png" id="4_ia344"]
 [ext_resource type="AudioStream" uid="uid://df15ny1f4lfis" path="res://assets/148075__sandyrb__lightbulb-smash-001.wav" id="5_wmd5v"]
+[ext_resource type="AudioStream" uid="uid://jsiwujglclm6" path="res://assets/lightbulb_hit.wav" id="8_7nhbq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8a65j"]
 animations = [{
@@ -197,12 +198,16 @@ tracks/3/keys = {
 "values": [0.0, -0.8290314, -2.4294984]
 }
 
+[sub_resource type="Animation" id="Animation_ia344"]
+resource_name = "swing_right"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_feswn"]
 _data = {
 &"RESET": SubResource("Animation_feswn"),
 &"fall_left": SubResource("Animation_jtag4"),
 &"fall_right": SubResource("Animation_7nhbq"),
-&"lightpulse": SubResource("Animation_uuj3v")
+&"lightpulse": SubResource("Animation_uuj3v"),
+&"swing_right": SubResource("Animation_ia344")
 }
 
 [sub_resource type="Animation" id="Animation_u1q3b"]
@@ -220,6 +225,7 @@ _data = {
 }
 
 [node name="Lamp" type="CharacterBody2D" groups=["Lamp"]]
+collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_uuj3v")
 
@@ -256,3 +262,6 @@ max_distance = 1000.0
 
 [node name="crash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_wmd5v")
+
+[node name="hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_7nhbq")

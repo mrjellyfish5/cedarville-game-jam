@@ -72,7 +72,7 @@ position = Vector2(576, 366)
 position = Vector2(266, 121)
 
 [node name="Moth4" parent="." instance=ExtResource("4_3dryh")]
-position = Vector2(319, -388)
+position = Vector2(316, -388)
 
 [node name="Moth3" parent="." instance=ExtResource("4_3dryh")]
 position = Vector2(249, -404)

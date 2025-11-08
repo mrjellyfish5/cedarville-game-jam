@@ -4,11 +4,14 @@ var target_pos = Vector2.ZERO
 var speed = 5000
 var follow_method = "None" # none stays still, player follows, lamp goes to lamp, tempted doesn't allow capture
 var temptation_range = 250
+var temptation_lamp
 
 func _physics_process(delta: float) -> void:
 
-	if follow_method == "Lamp" or follow_method == "Tempted":
+	if follow_method == "Lamp":
 		target_pos = nearest_lamp()
+	if follow_method == "Tempted" and !is_instance_valid(temptation_lamp):
+		follow_method = "Lamp"
 
 	
 		
@@ -17,6 +20,7 @@ func _physics_process(delta: float) -> void:
 		# tempt the moths
 		if (nearest_lamp().distance_to(global_position) < temptation_range):
 			follow_method = "Tempted"
+			target_pos == nearest_lamp()
 		
 		target_pos = get_tree().get_first_node_in_group("Player").position
 
@@ -53,3 +57,4 @@ func _on_lamp_detect_body_entered(body: Node2D) -> void:
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 	follow_method = "Lamp"
+	$VisibleOnScreenNotifier2D.queue_free()

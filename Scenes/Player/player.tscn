@@ -170,6 +170,7 @@ radius = 10.31
 height = 43.85
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xpcdj"]
+radius = 25.73908
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.4, 0.4)
@@ -199,7 +200,13 @@ shape = SubResource("CapsuleShape2D_xpcdj")
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackZone"]
-position = Vector2(79.99999, 0)
+position = Vector2(92.5, 0)
 shape = SubResource("CircleShape2D_xpcdj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_right = 1152
+limit_bottom = 652
+position_smoothing_enabled = true
 
 [connection signal="body_entered" from="attackZone" to="." method="_on_attack_zone_body_entered"]

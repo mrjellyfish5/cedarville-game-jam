@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://cg82lkxj74mc2"]
+[gd_scene load_steps=6 format=4 uid="uid://3ie3v7r3w8cl"]
 
 [ext_resource type="PackedScene" uid="uid://dke3qtjvucvep" path="res://Scenes/Player/player.tscn" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://bd22ntvwywacv" path="res://assets/wood.jpg" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://g0873wwrpsrg" path="res://Scenes/Lighting/Lighting.tscn" id="3_feb5d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 texture = ExtResource("1_e2o6t")
@@ -149,3 +150,9 @@ tile_set = SubResource("TileSet_fc0e3")
 
 [node name="Player" parent="." instance=ExtResource("1_80nbo")]
 position = Vector2(444.99997, 372.99997)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 0)
+
+[node name="Lamp" parent="." instance=ExtResource("3_feb5d")]
+position = Vector2(598, 210)
